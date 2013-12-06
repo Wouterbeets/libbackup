@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 11:01:30 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/06 11:04:59 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/04 11:54:10 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef __LIBFT_H__
@@ -14,10 +14,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <fcntl.h>
-# define BUFF_SIZE 10
 typedef struct		s_list
 {
 	void			*content;
@@ -84,7 +80,4 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_islower(int c);
 int		ft_isupper(int c);
-int		get_next_line(int const fd, char **line);
-int		readbuff(char **line);
-
 #endif

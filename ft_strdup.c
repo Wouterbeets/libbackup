@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 16:15:00 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/04 12:19:36 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/06 18:42:36 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 
 	i = 0;
-	dup = (char*)malloc(ft_strlen(s1) * sizeof(dup));
+	dup = ft_strnew(ft_strlen(s1));
 	while (s1[i] != '\0')
 	{
 		dup[i] = s1[i];

@@ -6,7 +6,7 @@
 #    By: wbeets <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 22:18:52 by wbeets            #+#    #+#              #
-#    Updated: 2013/12/06 11:05:35 by wbeets           ###   ########.fr        #
+#    Updated: 2013/12/06 18:49:45 by wbeets           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,8 +72,7 @@ SRC = 	ft_memmove.c \
 		ft_lstmap.c\
 		ft_isupper.c\
 		ft_islower.c\
-		ft_atoi.c\
-		get_next_line.c
+		ft_atoi.c
 
 OBJ = $(SRC:.c=.o)
 NAME = includes/libft.a
@@ -92,5 +91,8 @@ clean:
 
 fclean: clean
 	-rm $(NAME)
+
+gps:
+	git add *; git commit -m"auto"; git push
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 10:12:57 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/05 17:48:10 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/06 16:12:23 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	i = 0;
-	sub = (ft_memalloc(len + 1));
+	sub = (ft_strnew(len + 1));
 	while (start <= len)
 	{
 		sub[i] = s[start];
 		i++;
 		start++;
 	}
-	sub[i] = '\0';
 	return (sub);
 }
