@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/03 15:21:39 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/06 18:34:24 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/08 17:55:53 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ int		get_next_line(int const fd, char ** line)
 	static char		*buf = "";
 	size_t			i;
 	int				ret;
+	char			*str;
 
+	if (!line || fd < 0)
+		return (-1);
 	i = 0;
 	ret = 1;
 	if (buf[0] == '\0')
-		buf = ft_strnew(1);
+		buf = ft_strnew(0);
 	while (ret > 0)
 	{
-		while (buf[i] != '\0')
+		if ((str = ft_strchr(buf, '\n')) != NULL)
 		{
-			if (buf[i] == '\n')
-			{
-				*line = ft_strsub(buf, 0, i);
-				ft_memmove(buf, buf + i + 1, ft_strlen(buf) - i + 1);
-				return (1);
-			}
-			i++;
+			*str = '\0';
+			*line = ft_strdup(buf);
+			ft_memmove(buf, str + 1, ft_strlen(str + 1) + 1);
+			return (1);
 		}
 		buf = biggerbuf(fd, buf, &ret);
 	}
@@ -46,9 +46,9 @@ char	*biggerbuf(int const fd, char *buf, int *ret)
 	char	*tmp2;
 
 	*ret = read(fd, tmp, BUFF_SIZE);
-	tmp2 = ft_strdup(buf);
-	ft_strdel(&buf);
-	buf = ft_strjoin(tmp2, tmp);
+	tmp[*ret] = '\0';
+	tmp2 = buf;
+	buf = ft_strjoin(buf, tmp);
 	ft_strdel(&tmp2);
 	return (buf);
 }
