@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 09:40:09 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/04 12:26:15 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/11 12:14:22 by epither          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	**ft_strsplit(char const *s, char c)
 		while (*p == c)
 			p++;
 		*pstrtab = ft_strnew(ft_strlenc(p, c) + 1);
-		memcpy(*pstrtab, p, ft_strlenc(p, c));
+		ft_memcpy(*pstrtab, p, ft_strlenc(p, c));
 		while (*p != c)
 			p++;
 		pstrtab++;

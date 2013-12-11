@@ -6,13 +6,13 @@
 #    By: wbeets <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 22:18:52 by wbeets            #+#    #+#              #
-#    Updated: 2013/12/06 18:51:43 by wbeets           ###   ########.fr        #
+#    Updated: 2013/12/11 12:13:51 by epither          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: clean fclean re src
 
-SRC = 	ft_memmove.c \
+SRC =	ft_memmove.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_bzero.c \
@@ -78,7 +78,7 @@ SRC = 	ft_memmove.c \
 OBJ = $(SRC:.c=.o)
 NAME = includes/libft.a
 
-all: $(NAME) 
+all: $(NAME)
 
 $(NAME): obj
 	ar rc $(NAME) $(OBJ)
@@ -94,6 +94,8 @@ fclean: clean
 	-rm $(NAME)
 
 gps:
-	git add *; git commit -m"auto"; git push
+	git add *
+	git commit -m "auto"
+	git push
 
 re: fclean all
