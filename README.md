@@ -1,4 +1,0 @@
-libbackup
-=========
-
-my library backup
